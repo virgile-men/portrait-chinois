@@ -1,0 +1,266 @@
+/* PARTIE GÉNÉRALE */
+*, *::after, *::before{
+    box-sizing: border-box;
+}
+
+/* BODY */
+body {
+    /* enlever paramètres par défaut */
+    margin: 0;
+    /* font */
+    font-family: 'Montserrat', sans-serif;
+    color: white;
+    /* esthetique */
+    background-color: #000018;
+}
+.containt {
+    /* flex */
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+}
+
+/* TITRE */
+h1 {
+    /* enlever margin par défaut */
+    margin: 0;
+    /* alignement du titre */
+    text-align: center;
+    /* taille du titre */
+    font-size: 2rem;
+}
+.sous-titre {
+    /* parameètres textes*/
+    font-weight: 200;
+    font-size: 1rem;
+}
+
+/* IMAGES */
+img {
+    /* marge entre le sommet et le haut de l'image */
+    margin-top: 6.9vh;
+    /* que l'image prenne la hauteur qu'il faut dans la boite*/
+    /* height: inherit; */
+}
+/* tailles pour les images de chaque sections */
+.artiste > .double-images > img {
+    height: 36.605903vh;
+}
+.album > img {
+    height: 38.700174vh;
+}
+.media > img {
+    height: 32.690625vh;
+}
+.jeu-video > img {
+    height: 34.375vh;
+}
+.film > img {
+    height: 29.5vh;
+}
+.marque > img {
+    height: 35.34375vh;
+}
+.musee > img {
+    height: 28.228125vh;
+}
+.contact > .double-images > a > img {
+    height: 22.218576vh;
+}
+
+
+
+
+
+
+
+/* TEXTES */
+p {
+    /* dimensions */
+    width: 71.527778%;
+    margin-top: 5.208333vh;
+    margin-bottom: 23.611111vh;
+    /* paramètres textes*/
+    text-align: justify;
+    -moz-text-align-last: center;
+         text-align-last: center;
+    text-shadow: rgba(255, 255, 255, 0.8) 0px 0 10px;
+}
+
+/* LIENS */
+a {
+    /* enlever le surlignage des liens */
+    text-decoration: none;
+    /* couleur blanc pour les liens */
+    color: white;
+}
+
+/* BACKGROUND COLOR */
+.accueil {
+    background-color: black;
+}
+.artiste, a[href="#artiste"] {
+    background-color: #105688;
+}
+.album, a[href="#album"] {
+    background-color: #051d66;
+}
+.media, a[href="#media"] {
+    background-color: #670009;
+}
+.jeu-video, a[href="#jeu-video"] {
+    background-color: #154834;
+}
+.film, a[href="#film"] {
+    background-color: #343061;
+}
+.marque, a[href="#marque"] {
+    background-color: #c24123;
+}
+.musee, a[href="#musee"] {
+    background-color: #614644;
+}
+
+/* SCROLL */
+body {
+    overflow: hidden;
+}
+nav, main{ /* scroll pour la nav et le main */
+    overflow-y:scroll;
+    /* Cacher la barre de défilement pour IE et Edge */
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}  
+/* Cacher la barre de défilement pour Chrome, Safari et Opera */
+body::-webkit-scrollbar, nav::-webkit-scrollbar, main::-webkit-scrollbar {
+   display: none;
+}
+
+
+
+/* PARTIE HEADER */
+header {
+    /* dimensions boite */
+    width: 56px;
+    height: 100vh;
+    padding: 15px 0px 15px;
+    /* flex */
+    display: flex;
+    align-items: center;
+    flex-flow: column-reverse;
+    justify-content: space-between;
+    flex-shrink: 0; /* À parler avec Gaëlle pour comprendre son intérêt */
+}
+.entete {
+    /* enlever paramètres par défaut */
+    margin: 0;
+    /* paramètres font */
+    -webkit-writing-mode: vertical-rl;
+        -ms-writing-mode: vertical-rl;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+    font-size: 1.625em;
+    font-weight: 500;
+}
+
+
+
+/* PARTIE MENU */
+nav {
+    width: 25%;
+    position:relative;
+    height: 100vh;
+    border-left: 4px solid;
+    border-right: 4px solid;
+    border-color: white;
+
+
+    padding: 0.7%;
+
+    flex-shrink: 0; /* À parler avec Gaëlle pour comprendre son intérêt */
+}
+nav > a {
+    /* dimensions */
+    width: 100%;
+    height: 30vh;
+    /* espacement entre les a */
+    margin-bottom: 14px;
+    /* background */
+    background-image: url(img/background-texture.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    /* flex */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* font */
+    font-size: 1.625rem;
+    text-align: center;
+    /* element assombrie quand il n'est pas survolé */
+    box-shadow: inset 100vw 1em #0000003d;
+}
+nav > a:hover { /* enlèvement de l'assombrissement */
+    box-shadow: unset;
+}
+
+
+
+/* PARTIE MAIN */
+main {
+    width: 100%;
+    position:relative;
+    height: 100vh;
+}
+/* paramètrages des sections */
+.accueil, .artiste, .album, .media, .jeu-video, .film, .marque, .musee, .contact {
+    /* dimensions */
+    width: 100%;
+    height: 100vh;
+
+    /* background */
+    background-image: url(../assets/img/background-texture.png);
+    background-size: cover;
+    background-position: center;
+
+    /* flex */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+}
+/* ombres sur les images + titre */
+img, h1 {
+    -webkit-filter: drop-shadow(0 0 1em rgba(255, 255, 255, 0.5));
+            filter: drop-shadow(0 0 1em rgba(255, 255, 255, 0.5));
+}
+/* paramètrages pour les images côte a côte*/
+.double-images {
+    /* flex */
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    /* dimensions */
+    width: auto;
+}
+/* hauteur pour la nav et le main */
+.artiste > .double-images {
+    height: 36.458333vh;
+}
+/* hauteur pour les logos de .contact */
+.contact > .double-images > a {
+    height: 22.048611vh;
+}
+/* margin pour .artiste */
+.artiste > .double-images > img, .artiste > .double-images > a {
+    margin: 0 10px;
+}
+/* margin pour .contact */
+.contact > .double-images > a, .double-images > a > img {
+    margin: 0 28px;
+}
+/* margin-top du texte des scènes accueil et contact */
+.accueil > p, .contact > p {
+    margin-top: 13.888889vh;
+}
