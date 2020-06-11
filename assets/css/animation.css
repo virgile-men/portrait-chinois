@@ -1,13 +1,15 @@
-.layer {
-  pointer-events: auto;
+/* Transitions pour les filtres de lumière pour les img et les p (définies et désactivées spécifiquement au bon moment en js) */
+section img, section p, section img, .double-images img  {
+  transition: -webkit-filter 0.8s ease-in-out;
+  transition: filter 0.8s ease-in-out;
+  transition: filter 0.8s, -webkit-filter 0.8s ease-in-out;
+}
+/* Comme au-dessus mais ici pour les background-color des sections */
+main, .accueil, .artiste, .album, .media, .jeu-video, .film, .marque, .musee {
+  transition: background-color 0.5s ease-in-out;
 }
 
-/* Scroll lissé --> pour IE voir ../assets/script.js */
+/* Scroll lissé */
 main {
     scroll-behavior: smooth;
-  }
-@media (prefers-reduced-motion: reduce) {
-  main {
-    scroll-behavior: auto;
-  }
 }

@@ -39,8 +39,6 @@ h1 {
 img {
     /* marge entre le sommet et le haut de l'image */
     margin-top: 6.9vh;
-    /* que l'image prenne la hauteur qu'il faut dans la boite*/
-    /* height: inherit; */
 }
 /* tailles pour les images de chaque sections */
 .artiste > .double-images > img {
@@ -71,7 +69,7 @@ img {
 /* TEXTES */
 p {
     /* paramètres de police */
-    font-size: 1.4em;
+    font-size: 1.4rem;
     /* dimensions */
     width: 71.527778%;
     margin-top: 5.208333vh;
@@ -91,36 +89,32 @@ a {
     color: white;
 }
 
-/* BACKGROUND COLOR */
-.accueil {
-    background-color: black;
-}
-.artiste, a[href="#artiste"] {
+/* Couleurs d'arrières-plans */
+a[href="#artiste"] {
     background-color: #105688;
 }
-.album, a[href="#album"] {
+a[href="#album"] {
     background-color: #051d66;
 }
-.media, a[href="#media"] {
+a[href="#media"] {
     background-color: #670009;
 }
-.jeu-video, a[href="#jeu-video"] {
+a[href="#jeu-video"] {
     background-color: #154834;
 }
-.film, a[href="#film"] {
+a[href="#film"] {
     background-color: #343061;
 }
-.marque, a[href="#marque"] {
+a[href="#marque"] {
     background-color: #c24123;
 }
-.musee, a[href="#musee"] {
+a[href="#musee"] {
     background-color: #614644;
 }
+/* Pour les balises sections, cela se passe dans script.js */
+
 
 /* SCROLL */
-/* body { /* pas de scroll du body (puisque le scroll est nécessaire que pour nav et main) --> accessibilité
-    overflow: hidden;
-} */
 nav, main{ /* scroll pour la nav et le main */
     overflow-y:scroll;
     /* Cacher la barre de défilement pour IE et Edge */
@@ -155,7 +149,7 @@ header {
         -ms-writing-mode: vertical-rl;
             writing-mode: vertical-rl;
             transform: rotate(180deg);
-    font-size: 1.625em;
+    font-size: 1.625rem;
     font-weight: 500;
 }
 
@@ -196,7 +190,7 @@ nav > a {
     /* element assombrie quand il n'est pas survolé */
     box-shadow: inset 100vw 1em #0000003d;
 }
-nav > a:hover { /* enlèvement de l'assombrissement */
+nav > a:hover, .active { /* enlèvement de l'assombrissement */
     box-shadow: unset;
 }
 
@@ -207,6 +201,17 @@ main {
     width: 100%;
     position:relative;
     height: 100vh;
+    background-color: black;
+
+    --accueil: black;
+    --artiste: #105688;
+    --album: #051d66;
+    --media: #670009;
+    --jeu-video: #154834;
+    --film: #343061;
+    --marque: #c24123;
+    --musee: #614644;
+    --contact: #000018;
 }
 /* paramètrages des sections */
 .accueil, .artiste, .album, .media, .jeu-video, .film, .marque, .musee, .contact {
@@ -259,21 +264,4 @@ img, h1 {
 /* margin-top du texte des scènes accueil et contact */
 .accueil > p, .contact > p {
     margin-top: 13.888889vh;
-}
-
-
-
-/* @MEDIA */
-
-/* largeur inférieur à 800px */
-@media screen and (max-width: 800px) {
-    /* réduction de la taille des p*/
-    p {
-        font-size: 0.6em;
-    }
-    /* réduire les largeurs des images pour pas qu'elles sortent des scènes */
-    img {
-        height: auto !important;
-        width: 80%;
-    }
 }

@@ -1,0 +1,18 @@
+/* largeur inférieur à 800px */
+@media screen and (max-width: 800px) {
+    /* réduction de la taille des p*/
+    p {
+        font-size: 0.6em;
+    }
+    /* réduire les largeurs des images pour pas qu'elles sortent des scènes */
+    img {
+        height: auto;
+        width: 80%;
+    }
+}
+/* Accessibilité sur le scroll */
+@media (prefers-reduced-motion: reduce) {
+    main {
+      scroll-behavior: auto;
+    }
+  }
