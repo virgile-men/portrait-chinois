@@ -68,14 +68,10 @@ img {
     height: 22.218576vh;
 }
 
-
-
-
-
-
-
 /* TEXTES */
 p {
+    /* paramètres de police */
+    font-size: 1.4em;
     /* dimensions */
     width: 71.527778%;
     margin-top: 5.208333vh;
@@ -122,9 +118,9 @@ a {
 }
 
 /* SCROLL */
-body {
+/* body { /* pas de scroll du body (puisque le scroll est nécessaire que pour nav et main) --> accessibilité
     overflow: hidden;
-}
+} */
 nav, main{ /* scroll pour la nav et le main */
     overflow-y:scroll;
     /* Cacher la barre de défilement pour IE et Edge */
@@ -186,7 +182,7 @@ nav > a {
     /* espacement entre les a */
     margin-bottom: 14px;
     /* background */
-    background-image: url(img/background-texture.png);
+    background-image: url(../img/background-texture.png);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -219,7 +215,7 @@ main {
     height: 100vh;
 
     /* background */
-    background-image: url(../assets/img/background-texture.png);
+    background-image: url(../img/background-texture.png);
     background-size: cover;
     background-position: center;
 
@@ -263,4 +259,21 @@ img, h1 {
 /* margin-top du texte des scènes accueil et contact */
 .accueil > p, .contact > p {
     margin-top: 13.888889vh;
+}
+
+
+
+/* @MEDIA */
+
+/* largeur inférieur à 800px */
+@media screen and (max-width: 800px) {
+    /* réduction de la taille des p*/
+    p {
+        font-size: 0.6em;
+    }
+    /* réduire les largeurs des images pour pas qu'elles sortent des scènes */
+    img {
+        height: auto !important;
+        width: 80%;
+    }
 }

@@ -1,0 +1,13 @@
+.layer {
+  pointer-events: auto;
+}
+
+/* Scroll lissé --> pour IE voir ../assets/script.js */
+main {
+    scroll-behavior: smooth;
+  }
+@media (prefers-reduced-motion: reduce) {
+  main {
+    scroll-behavior: auto;
+  }
+}
