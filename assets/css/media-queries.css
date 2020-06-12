@@ -1,6 +1,6 @@
 /* largeur inférieur à 800px */
 @media screen and (max-width: 800px) {
-    /* réduction de la taille des p*/
+    /* réduction de la taille des p */
     p {
         font-size: 0.6em;
     }

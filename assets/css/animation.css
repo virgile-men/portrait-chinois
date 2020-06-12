@@ -1,18 +1,50 @@
+/* Animation barrant les balises a du header */
+header a:after {
+  position: absolute;
+  top: calc(50%);
+  left: -3px;
+  right: 0;
+  margin: auto;
+  width: 0%;
+  content: ".";
+  color: transparent;
+  background: #ffffff;
+  height: 3px;
+  transform: rotate( 0.25turn );
+  transition: width 0.5s;
+}
+/* taille de la barre pour "Portrait-chinois" */
+header a[href="#accueil"]:hover:after {
+  width: 660%;
+}
+/* taille de la barre pour "Virgile Mendes" */
+header a[href="#contact"]:hover:after {
+  width: 630%;
+}
+
+
+/* couleur d'arrière-plan des sections par défaut */
 section {
   background-color: black;
 }
+/* filtre d'arrière-plan des img et des p dans les <section> par défaut */
 section img, section p {
-  filter: brightness(0.3);
+  -webkit-filter: brightness(0.3);
+          filter: brightness(0.3);
 }
-
+/* retire la couleur d'arrière-plan (noir) de la section active */
 .section-active {
   background-color: unset;
 }
+/* change le filtre (assombrissant) aux imgs de la section active par un effet néon */
 .img-active {
-  filter: drop-shadow(0 0 1em rgba(255, 255, 255, 0.5));
+  -webkit-filter: drop-shadow(0 0 1em rgba(255, 255, 255, 0.5));
+          filter: drop-shadow(0 0 1em rgba(255, 255, 255, 0.5));
 }
+/* retire le filtre (assombrissant) au p de la section active */
 .p-active {
-  filter: none;
+  -webkit-filter: none;
+          filter: none;
 }
 
 
@@ -20,6 +52,7 @@ section img, section p {
 section img, section p, section img, .double-images img  {
   transition: -webkit-filter 0.8s ease-out;
   transition: filter 0.8s ease-out;
+  transition: filter 0.8s ease-out, -webkit-filter 0.8s ease-out;
   transition: filter 0.8s, -webkit-filter 0.8s ease-out;
 }
 /* Comme au-dessus mais ici pour les background-color des sections */
