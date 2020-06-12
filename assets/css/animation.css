@@ -1,14 +1,31 @@
+section {
+  background-color: black;
+}
+section img, section p {
+  filter: brightness(0.3);
+}
+
+.section-active {
+  background-color: unset;
+}
+.img-active {
+  filter: drop-shadow(0 0 1em rgba(255, 255, 255, 0.5));
+}
+.p-active {
+  filter: none;
+}
+
+
 /* Transitions pour les filtres de lumière pour les img et les p (définies et désactivées spécifiquement au bon moment en js) */
 section img, section p, section img, .double-images img  {
-  transition: -webkit-filter 0.8s ease-in-out;
-  transition: filter 0.8s ease-in-out;
-  transition: filter 0.8s, -webkit-filter 0.8s ease-in-out;
+  transition: -webkit-filter 0.8s ease-out;
+  transition: filter 0.8s ease-out;
+  transition: filter 0.8s, -webkit-filter 0.8s ease-out;
 }
 /* Comme au-dessus mais ici pour les background-color des sections */
 main, .accueil, .artiste, .album, .media, .jeu-video, .film, .marque, .musee {
-  transition: background-color 0.5s ease-in-out;
+  transition: background-color 0.5s ease-out;
 }
-
 /* Scroll lissé */
 main {
     scroll-behavior: smooth;

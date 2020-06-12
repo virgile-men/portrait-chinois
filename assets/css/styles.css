@@ -190,7 +190,7 @@ nav > a {
     /* element assombrie quand il n'est pas survolé */
     box-shadow: inset 100vw 1em #0000003d;
 }
-nav > a:hover, .active { /* enlèvement de l'assombrissement */
+nav > a:hover, .nav-active { /* enlèvement de l'assombrissement */
     box-shadow: unset;
 }
 

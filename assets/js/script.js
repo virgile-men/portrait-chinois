@@ -8,8 +8,10 @@ $(document).ready(function() {
         scenes.push(new Parallax(targetElements[i]));
     }
 
-    // Marquage de la section dans la barre de navigation
     $('main').on("scroll", function() {
+
+
+        // Marquage de la section dans la barre de navigation
         var currentScroll = $(document).scrollTop();
 
         $("nav a").each(function(){
@@ -18,91 +20,64 @@ $(document).ready(function() {
             var positionBottom = positionTop + $(target).height();
        
             if((currentScroll > positionTop) && (currentScroll <= positionBottom)){
-                $(this).addClass("active");
+                $(this).addClass("nav-active");
             } else {
-                $(this).removeClass("active");
+                $(this).removeClass("nav-active");
             }
-    })
 
-    // Effet de lumière éteinte
-    $('main').on("scroll", function() {
-        $("section").css("background-color", "black");
-        $("section img, section p").css("filter", "brightness(0.3)");
+            
+        // Effet de lumière éteinte
     
         if ($("#accueil").offset().top <= ($('#accueil').height()*0.15)
         && $("#accueil").offset().top >= -($('#accueil').height()*0.85)) {
-            $("#accueil").css("background-color", "unset");
-            $("#accueil img").css("filter", "drop-shadow(0 0 1em rgba(255, 255, 255, 0.5))");
-
-            $("#accueil p").css("filter", "none");
-            $("main").css("background-color", "var(--accueil)");
+            sectionActive("#accueil","#accueil img","#accueil p","var(--accueil)");
         }
         if ($("#artiste").offset().top <= ($('#accueil').height()*0.15)
         && $("#artiste").offset().top >= -($('#accueil').height()*0.85)) {
-            $("#artiste").css("background-color", "unset");
-            $("main").css("background-color", "var(--artiste)");
-
-            $("#artiste img").css("filter", "drop-shadow(0 0 1em rgba(255, 255, 255, 0.5))");
-            $("#artiste p").css("filter", "none");
+            sectionActive("#artiste","#artiste img","#artiste p","var(--artiste)");
         }
         if ($("#album").offset().top <= ($('#accueil').height()*0.15)
         && $("#album").offset().top >= -($('#accueil').height()*0.85)) {
-            $("#album").css("background-color", "unset");
-            $("main").css("background-color", "var(--album)");
-
-            $("#album img").css("filter", "drop-shadow(0 0 1em rgba(255, 255, 255, 0.5))");
-            $("#album p").css("filter", "none");
+            sectionActive("#album","#album img","#album p","var(--album)");
         }
         if ($("#media").offset().top <= ($('#accueil').height()*0.15)
         && $("#media").offset().top >= -($('#accueil').height()*0.85)) {
-            $("#media").css("background-color", "unset");
-            $("main").css("background-color", "var(--media)");
-            
-            $("#media img").css("filter", "drop-shadow(0 0 1em rgba(255, 255, 255, 0.5))");
-            $("#media p").css("filter", "none");
+            sectionActive("#media","#media img","#media p","var(--media)");
         }
         if ($("#jeu-video").offset().top <= ($('#accueil').height()*0.15)
         && $("#jeu-video").offset().top >= -($('#accueil').height()*0.85)) {
-            $("#jeu-video").css("background-color", "unset");
-            $("main").css("background-color", "var(--jeu-video)");
-
-            $("#jeu-video img").css("filter", "drop-shadow(0 0 1em rgba(255, 255, 255, 0.5))");
-            $("#jeu-video p").css("filter", "none");
+            sectionActive("#jeu-video","#jeu-video img","#jeu-video p","var(--jeu-video)");
         }
         if ($("#film").offset().top <= ($('#accueil').height()*0.15)
         && $("#film").offset().top >= -($('#accueil').height()*0.85)) {
-            $("#film").css("background-color", "unset");
-            $("main").css("background-color", "var(--film)");
-
-            $("#film img").css("filter", "drop-shadow(0 0 1em rgba(255, 255, 255, 0.5))");
-            $("#film p").css("filter", "none");
+            sectionActive("#film","#film img","#film p","var(--film)");
         }
         if ($("#marque").offset().top <= ($('#accueil').height()*0.15)
         && $("#marque").offset().top >= -($('#accueil').height()*0.85)) {
-            $("#marque").css("background-color", "unset");
-            $("main").css("background-color", "var(--marque)");
-
-            $("#marque img").css("filter", "drop-shadow(0 0 1em rgba(255, 255, 255, 0.5))");
-            $("#marque p").css("filter", "none");
+            sectionActive("#marque","#marque img","#marque p","var(--marque)");
         }
         if ($("#musee").offset().top <= ($('#accueil').height()*0.15)
         && $("#musee").offset().top >= -($('#accueil').height()*0.85)) {
-            $("#musee").css("background-color", "unset");
-            $("main").css("background-color", "var(--musee)");
-
-            $("#musee img").css("filter", "drop-shadow(0 0 1em rgba(255, 255, 255, 0.5))");
-            $("#musee p").css("filter", "none");
+            sectionActive("#musee","#musee img","#musee p","var(--musee)");
         }
         if ($("#contact").offset().top <= ($('#accueil').height()*0.15)
         && $("#contact").offset().top >= -($('#accueil').height()*0.85)) {
-            $("#contact").css("background-color", "unset");
-            $("main").css("background-color", "var(--contact)");
-
-            $("#contact img").css("filter", "drop-shadow(0 0 1em rgba(255, 255, 255, 0.5))");
-            $("#contact p").css("filter", "none");
+            sectionActive("#contact","#contact img","#contact p","var(--contact)");
         }
     });
   });
+
+        function sectionActive(section,sectionImg,sectionP,mainColor) {
+            $("section").removeClass("section-active");
+            $("section img").removeClass("img-active");
+            $("section p").removeClass("p-active");
+            $(section).addClass("section-active");
+            $(sectionImg).addClass("img-active");
+            $(sectionP).addClass("p-active");
+            $("main").css("background-color", mainColor);
+        }
+
+        
 
 
 });
