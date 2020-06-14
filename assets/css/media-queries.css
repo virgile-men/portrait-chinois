@@ -1,4 +1,4 @@
-/* largeur inférieur à 800px */
+/* largeur de 0 à 800px */
 @media screen and (max-width: 800px) {
     /* réduction de la taille des p */
     p {
@@ -8,6 +8,20 @@
     img {
         height: auto;
         width: 80%;
+    }
+}
+/* largeur de 800px à 1100px */
+@media screen and (max-width: 1100px) {
+    /* réduction de la taille des p */
+    p {
+        font-size: 1rem;
+    }
+}
+/* hauteur de 0 à 500px */
+@media screen and (max-height: 500px) {
+    /* réduction de la taille des img (et de .double-images) */
+    .accueil > img, .artiste > .double-images, .album > img, .media > img, .jeu-video > img, .film > img, .marque > img, .musee > img {
+        height: 20%;
     }
 }
 /* Accessibilité sur le scroll */
