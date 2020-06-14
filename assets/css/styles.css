@@ -30,7 +30,7 @@ h1 {
     font-size: 2rem;
 }
 .sous-titre {
-    /* parameètres textes*/
+    /* paramètres textes*/
     font-weight: 200;
     font-size: 1rem;
 }
@@ -111,7 +111,7 @@ a[href="#marque"] {
 a[href="#musee"] {
     background-color: #614644;
 }
-/* Pour les balises sections, cela se passe dans script.js */
+/* Pour les balises sections, cela se passe dans animations.css et script.js */
 
 
 /* SCROLL */
@@ -139,7 +139,7 @@ header {
     align-items: center;
     flex-flow: column-reverse;
     justify-content: space-between;
-    flex-shrink: 0; /* À parler avec Gaëlle pour comprendre son intérêt */
+    flex-shrink: 0;
 }
 .entete {
     /* enlever paramètres par défaut */
@@ -163,11 +163,8 @@ nav {
     border-left: 4px solid;
     border-right: 4px solid;
     border-color: white;
-
-
     padding: 0.7%;
-
-    flex-shrink: 0; /* À parler avec Gaëlle pour comprendre son intérêt */
+    flex-shrink: 0;
 }
 nav > a {
     /* dimensions */
